@@ -29,3 +29,29 @@ Run one of the docker run command specified above.
 ## Quality Gates
 
 Enable quality gates with some of the required conditions, also enable quality profile with AEM and Custom Project rules, refer `scrips/configure.bash`
+
+Configure the quality gate conditions in conf/aem-quality-gate.json
+
+```
+{
+  "id": 1,
+  "name": "AEM",
+  "conditions": [
+    { "id": 2, "metric": "blocker_violations", "op": "GT", "error": "0" },
+    { "id": 3, "metric": "comment_lines_density", "op": "LT", "error": "20" },
+    { "id": 4, "metric": "critical_violations", "op": "GT", "error": "0" },
+    { "id": 5, "metric": "duplicated_lines_density", "op": "GT","error": "10"},
+    { "id": 6, "metric": "new_duplicated_lines", "op": "GT", "error": "0" },
+    { "id": 7, "metric": "major_violations", "op": "GT", "error": "0" },
+    { "id": 8, "metric": "new_violations", "op": "GT", "error": "0" },
+    { "id": 9, "metric": "new_sqale_debt_ratio", "op": "GT", "error": "0" },
+    { "id": 10, "metric": "sqale_debt_ratio", "op": "GT", "error": "5" },
+    { "id": 11, "metric": "coverage", "op": "LT", "error": "75" },
+    { "id": 12, "metric": "code_smells", "op": "GT", "error": "1" },
+	{ "id": 13, "metric": "sqale_rating", "op": "GT", "error": "1" },
+	{ "id": 14, "metric": "reliability_rating", "op": "GT", "error": "1" },
+	{ "id": 15, "metric": "security_rating", "op": "GT", "error": "1" }
+  ]
+}
+
+```
