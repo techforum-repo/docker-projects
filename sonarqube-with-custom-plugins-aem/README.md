@@ -7,14 +7,14 @@ This is a docker image that is identical to the official [sonarqube docker image
 Latest from Docker Hub:
 
 ```sh
-docker run --rm -p 9000:9000 -e SONARQUBE_ADMIN_PASSWORD="Welcome1" techforum/sonarqube-with-custom-plugins-aem:latest
+docker run --rm --name sonarqube -p 9000:9000 -e SONARQUBE_ADMIN_PASSWORD="Welcome1" techforum/sonarqube-with-custom-plugins-aem:latest
 
 ```
 
 To persist the data and logs to the host system:
 
 ```sh
-docker run --rm -p 9000:9000 -v /mnt/c/Albin/blogData/docker-container-files/data:/opt/sonarqube/data -v /mnt/c/Albin/blogData/docker-container-files/logs:/opt/sonarqube/logs -e SONARQUBE_ADMIN_PASSWORD="Welcome1" techforum/sonarqube-with-custom-plugins-aem:latest
+docker run --rm --name sonarqube -p 9000:9000 -v /mnt/c/Albin/blogData/docker-container-files/data:/opt/sonarqube/data -v /mnt/c/Albin/blogData/docker-container-files/logs:/opt/sonarqube/logs -e SONARQUBE_ADMIN_PASSWORD="Welcome1" techforum/sonarqube-with-custom-plugins-aem:latest
 
 ```
 
@@ -53,5 +53,26 @@ Configure the quality gate conditions in conf/aem-quality-gate.json
 	{ "id": 15, "metric": "security_rating", "op": "GT", "error": "1" }
   ]
 }
+
+```
+## Additional Docker Commands
+
+```
+Verify the containers status
+
+docker ps -a 
+docker ps -a -f name=sonarqube
+
+Restart Container
+
+docker container restart sonarqube
+
+Stop container
+
+docker container stop sonarqube
+
+View Container Logs
+
+docker logs sonarqube 
 
 ```
