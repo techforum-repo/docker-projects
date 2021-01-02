@@ -58,20 +58,20 @@ Configure the quality gate conditions in conf/aem-quality-gate.json
 ## Additional Docker Commands
 
 ```
-Verify the containers status
+**Verify the containers status**
 
 docker ps -a 
 docker ps -a -f name=sonarqube
 
-Restart Container
+**Restart Container**
 
 docker container restart sonarqube
 
-Stop container
+**Stop container**
 
 docker container stop sonarqube
 
-View Container Logs
+**View Container Logs**
 
 docker logs sonarqube 
 
