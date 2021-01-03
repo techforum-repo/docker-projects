@@ -82,3 +82,10 @@ docker container stop sonarqube
 ```
 docker logs sonarqube
 ```
+
+## To run the sonarqube with external database(postgres) - the configurations are enabled in docker-compose.yml
+
+```
+sudo sysctl -w vm.max_map_count=262144   ( maximum number of memory map areas form VM)
+docker-compose up
+```
