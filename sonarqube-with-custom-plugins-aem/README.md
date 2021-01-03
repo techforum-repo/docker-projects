@@ -88,6 +88,6 @@ docker logs sonarqube
 The required configurations are enabled in docker-compose.yml file, execute the below commands
 
 ```
-sudo sysctl -w vm.max_map_count=262144   ( maximum number of memory map areas form VM)
+sudo sysctl -w vm.max_map_count=262144   ( maximum number of memory map areas for VM)
 docker-compose up
 ```
