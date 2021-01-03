@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  sonarqube:
+    image: techforum/sonarqube-with-custom-plugins-aem:latest
+    container_name: sonarqube
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+    networks:
+      - sonarnet
+    environment:
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+      - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
+      - SONARQUBE_ADMIN_PASSWORD=Welcome1
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_logs:/opt/sonarqube/logs
+  db:
+    image: postgres:latest
+    container_name: postgres
+    networks:
+      - sonarnet
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+      - POSTGRES_DB=sonar
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+
+networks:
+  sonarnet:
+    driver: bridge
+
+volumes:
+  sonarqube_data:
+  sonarqube_logs:
+  postgresql_data:
