@@ -37,6 +37,7 @@ create_quality_gate()
 {
 
 	info  "creating AEM/Custom quality gate."
+	#Modify the quality gate name(AEM) as required
     res=$(curl -su "admin:$SONARQUBE_ADMIN_PASSWORD" \
                 --data-urlencode "name=AEM" \
                 "${SONARQUBE_URL}/api/qualitygates/create")
@@ -89,6 +90,9 @@ create_quality_gate()
 create_quality_profiles()
 {
     info  "creating Quality Profile."
+	
+	#Change the custom quality profile id(aem-way-java) based on your need
+	
     res=$(curl -su "admin:$SONARQUBE_ADMIN_PASSWORD" \
                 --data-urlencode "language=java" \
 				--data-urlencode "name=aem-way-java" \
@@ -143,6 +147,8 @@ create_quality_profiles()
     fi
 	
 	info "Activating AEM Rules"
+	
+	#Modify the custom rule repository id's based on your custom plugin configuration
 	
 	res=$(curl -su "admin:$SONARQUBE_ADMIN_PASSWORD" \
                 --data-urlencode "repositories=AEM Rules,Common HTL,custom-project-rules," \
