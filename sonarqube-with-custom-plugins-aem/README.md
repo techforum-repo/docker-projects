@@ -4,7 +4,7 @@ This is a docker image that is identical to the official [sonarqube docker image
 
 ## Running
 
-Latest from Docker Hub:
+**Latest from Docker Hub:**
 
 ```sh
 docker run --rm --name sonarqube -p 9000:9000 -e SONARQUBE_ADMIN_PASSWORD="Welcome1" techforum/sonarqube-with-custom-plugins-aem:latest
@@ -20,7 +20,7 @@ docker run --rm --name sonarqube -p 9000:9000 -v /mnt/c/Albin/blogData/docker-co
 
 Specify the password, the latest SonarQube versions require to change the password on first login, the scripts will automatically update the password(provide in the docker run command).
 
-Run From Source:
+**Run From Source:**
 
 Clone the repo(git clone https://github.com/techforum-repo/docker-projects.git) and cd to the sonarqube-with-custom-plugins-aem ,run the `./build.bash` script.
 
