@@ -48,9 +48,9 @@ Configure the quality gate conditions in conf/aem-quality-gate.json
     { "id": 10, "metric": "sqale_debt_ratio", "op": "GT", "error": "5" },
     { "id": 11, "metric": "coverage", "op": "LT", "error": "75" },
     { "id": 12, "metric": "code_smells", "op": "GT", "error": "1" },
-	{ "id": 13, "metric": "sqale_rating", "op": "GT", "error": "1" },
-	{ "id": 14, "metric": "reliability_rating", "op": "GT", "error": "1" },
-	{ "id": 15, "metric": "security_rating", "op": "GT", "error": "1" }
+    { "id": 13, "metric": "sqale_rating", "op": "GT", "error": "1" },
+    { "id": 14, "metric": "reliability_rating", "op": "GT", "error": "1" },
+    { "id": 15, "metric": "security_rating", "op": "GT", "error": "1" }
   ]
 }
 
