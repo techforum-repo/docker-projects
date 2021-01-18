@@ -30,7 +30,7 @@ Modifify tomcat-users.xml based on your need
 
 Modify context.xml for restricting the manager/host-manager external access.
 
-**Mount application(war) from host machine
+**Mount application(war) from host machine**
 
 The required configurations are enabled in docker-compose.yml file, modify the application file name
 Execute the below command from project root folder(the location of docker-compose.yml file)
