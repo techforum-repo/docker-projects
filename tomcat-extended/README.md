@@ -41,6 +41,12 @@ The application will be re-deployed on every change from the host folder.
 docker-compose up
 ```
 
+The applications and management URL's can be accessed now
+
+Credential for manager UI - tomcat/Welcome1
+
+![Manager UI](manager-ui.png)
+
 **View Container Logs**
 
 ```
