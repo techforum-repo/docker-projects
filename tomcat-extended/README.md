@@ -35,7 +35,7 @@ Modify context.xml for restricting the manager/host-manager external access.
 The required configurations are enabled in docker-compose.yml file, modify the application file name
 Execute the below command from project root folder(the location of docker-compose.yml file)
 
-The application will be re-deployed on every change from the host folder.
+The application will be re-deployed on every change from the host folder. The docker-compose.yml file is enabled with jacoco agent confiuration for remote coverage
 
 ```
 docker-compose up
