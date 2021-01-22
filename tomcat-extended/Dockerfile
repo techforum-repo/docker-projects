@@ -7,6 +7,9 @@ RUN mv /usr/local/tomcat/webapps /usr/local/tomcat/webapps-bkp
 
 RUN mv /usr/local/tomcat/webapps.dist /usr/local/tomcat/webapps
 
+#Copy Jacocco agent
+COPY jacocoagent.jar /usr/local/tomcat/lib
+
 #Expose manager application externally, if required expose only the specific IP's
 COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 

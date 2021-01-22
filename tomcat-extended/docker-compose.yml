@@ -5,9 +5,14 @@ services:
   tomcat:
    image: techforum/tomcat-extended:latest
    container_name: tomcat
+   
+   environment:
+     CATALINA_OPTS: "-javaagent:/usr/local/tomcat/lib/jacocoagent.jar=port=6300,address=0.0.0.0,destfile=/tmp/jacoco-remote.exec,includes=com.sample.*,append=true,output=tcpserver"
 
    ports:
      - 8080:8080
+     - 6300:6300
 
    volumes:
      - ./helloword-host-mounted.war:/usr/local/tomcat/webapps/helloword-host-mounted.war
+     - ./maven-sample-webapp.war:/usr/local/tomcat/webapps/maven-sample-webapp.war
