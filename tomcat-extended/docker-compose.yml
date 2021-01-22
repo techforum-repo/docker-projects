@@ -15,4 +15,4 @@ services:
 
    volumes:
      - ./helloword-host-mounted.war:/usr/local/tomcat/webapps/helloword-host-mounted.war
-     - ./maven-sample-webapp.war:/usr/local/tomcat/webapps/maven-sample-webapp.war
+     - ./code-coverage-remote.war:/usr/local/tomcat/webapps/code-coverage-remote.war
